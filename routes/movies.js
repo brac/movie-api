@@ -13,8 +13,22 @@ router.route('/')
   })
 
 router.route('/:id')
+  .get((req, res) => {
+    queries.listSingle(req.params.id).then(
+      result => res.json(result)
+    )
+  })
+
   .put((req, res) => {
-    queries.update(req.body, req.params.id).then( result => res.json(result))
+    queries.update(req.body, req.params.id).then(
+      result => res.json(result)
+    )
+  })
+
+  .delete((req, res) => {
+    queries.deleteRecord(req.params.id).then(
+      result => res.json(result)
+    )
   })
 
 module.exports = router

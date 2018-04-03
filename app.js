@@ -8,7 +8,7 @@ const movieApi   = require('./routes/movies')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/movies', movieApi)
+app.use('/api/movies', movieApi)
 
 app.use('/', (req, res) => {
   res.json({ message: 'Welcome!'})
